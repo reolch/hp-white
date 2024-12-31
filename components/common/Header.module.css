@@ -2,88 +2,236 @@
 
 /* モバイルファーストの基本スタイル */
 .header {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
-    padding: 10px 15px;
+    padding: 12px 20px;
 }
 
 .logo {
-    height: 150px;
+    height: 40px;
+    width: auto;
 }
 
 .menu-toggle {
     display: block;
-    font-size: 24px;
-    border: none;
     background: none;
+    border: none;
+    font-size: 24px;
     cursor: pointer;
+    padding: 8px;
 }
 
 .header-bottom {
-    display: none;
-    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
 }
 
 .header-bottom.open {
-    display: block;
+    max-height: 1000px;
 }
 
 .header-bottom ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .header-bottom li {
-    margin: 10px 0;
+    border-top: 1px solid #eee;
 }
 
-.header-bottom a {
+.header-bottom a,
+.serviceLink {
+    display: block;
+    padding: 15px 20px;
     color: #333;
     text-decoration: none;
     font-weight: bold;
 }
 
-.header-bottom a:hover {
-    text-decoration: underline;
+/* サービスドロップダウン（モバイル） */
+.serviceDropdown {
+    position: relative;
 }
 
-/* デスクトップ用のスタイル */
-@media(min-width: 768px) {
+.dropdownArrow {
+    font-size: 0.8em;
+    margin-left: 4px;
+}
+
+.dropdownMenu {
+    background: #f8f8f8;
+}
+
+.dropdownMenu ul {
+    padding: 0;
+}
+
+.dropdownMenu li {
+    border-top: 1px solid #eee;
+}
+
+.dropdownMenu a {
+    padding: 15px 30px;
+    color: #333;
+    font-weight: normal;
+}
+
+/* PC表示 */
+@media (min-width: 769px) {
+    .header {
+        position: static;
+        padding: 30px 0;
+        height: auto;
+        overflow: visible;
+    }
+
     .header-top {
-        display: flex;
+        padding: 0;
         justify-content: center;
-    }
-
-    .logo {
-        height: 200px;
-    }
-
-    .header-bottom {
-        display: flex;
-        justify-content: center;
-    }
-
-    .header-bottom ul {
-        flex-direction: row;
-    }
-
-    .header-bottom li {
-        margin: 0 15px;
+        margin-bottom: 30px;
+        overflow: visible;
     }
 
     .menu-toggle {
         display: none;
+    }
+
+    .logo {
+        height: 200px;
+        width: auto;
+        transition: all 0.3s ease;
+    }
+
+    .header-bottom {
+        position: static;
+        max-height: none;
+        overflow: visible;
+        width: 100%;
+        display: block;
+    }
+
+    .header-bottom ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        gap: 50px;
+        overflow: visible;
+    }
+
+    .header-bottom li {
+        border: none;
+        margin: 0;
+    }
+
+    .header-bottom a {
+        padding: 8px 0;
+        font-size: 1.1rem;
+    }
+
+    /* サービスドロップダウン（PC） */
+    .serviceDropdown {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .dropdownMenu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(0);
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 12px 0;
+        min-width: 220px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    .serviceDropdown:hover .dropdownMenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: auto;
+    }
+
+    .dropdownMenu ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .dropdownMenu li {
+        margin: 0;
+        border: none;
+        width: 100%;
+        position: relative;
+    }
+
+    .dropdownMenu a {
+        padding: 12px 20px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .dropdownMenu a:hover {
+        background-color: #f5f5f5;
+    }
+}
+
+/* ダークモード */
+@media (prefers-color-scheme: dark) {
+    .header {
+        background: #222;
+    }
+
+    .header-bottom li {
+        border-color: #333;
+    }
+
+    .header-bottom a,
+    .serviceLink,
+    .dropdownMenu a {
+        color: #fff;
+    }
+
+    .dropdownMenu {
+        background: #333;
+    }
+
+    @media (min-width: 769px) {
+        .dropdownMenu {
+            background: #222;
+        }
+
+        .dropdownMenu a:hover {
+            background-color: #333;
+        }
     }
 }

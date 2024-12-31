@@ -1,194 +1,159 @@
 .access {
-  background-color: #f8f8f8;
-  padding: 100px 0;
-  position: relative;
+  padding: 60px 20px;
+  background: #f8f8f8;
 }
 
 .accessInner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
 }
 
 .accessTitle {
   text-align: center;
-  font-size: 2.8rem;
-  margin-bottom: 80px;
+  font-size: 2rem;
+  margin-bottom: 40px;
   font-weight: bold;
-  position: relative;
-  letter-spacing: 0.05em;
-  color: #333;
-}
-
-.accessTitle::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(to right, #333, #666);
-  margin: 25px auto 0;
-  border-radius: 2px;
 }
 
 .content {
   display: flex;
-  gap: 80px;
-  align-items: stretch;
-}
-
-.info, .mapContainer {
-  flex: 1;
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  min-height: 500px;
-  display: flex;
   flex-direction: column;
+  gap: 40px;
 }
 
 .info {
-  padding: 50px;
+  flex: 1;
 }
 
-.info dl {
+.infoCard {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infoItem {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 25px 30px;
-  line-height: 1.8;
-  height: 100%;
+  grid-template-columns: 100px 1fr;
+  align-items: baseline;
+  gap: 20px;
 }
 
-.info dt {
+.infoItem dt {
   font-weight: bold;
-  color: #222;
-  font-size: 1.1rem;
-  letter-spacing: 0.03em;
-  position: relative;
-  padding-left: 15px;
+  color: #666;
 }
 
-.info dt::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 16px;
-  background: linear-gradient(to bottom, #333, #666);
-  border-radius: 2px;
+.infoItem dd {
+  margin: 0;
 }
 
-.info dd {
-  font-size: 1.05rem;
-  line-height: 1.9;
-  color: #444;
-  letter-spacing: 0.02em;
+.postal {
+  margin: 0 0 4px 0;
+  color: #666;
 }
 
-.info dd br + br {
-  margin-top: 1em;
+.address {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.tel {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.tel:hover {
+  text-decoration: underline;
+}
+
+.hours {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.buttonContainer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.mapButton {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.mapButton:hover {
+  background: #555;
 }
 
 .mapContainer {
+  flex: 1;
+  border-radius: 12px;
   overflow: hidden;
-  position: relative;
-  padding: 0;
-}
-
-.mapContainer::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
-  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .mapContainer iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
   display: block;
 }
 
-@media (max-width: 768px) {
-  .access {
-    padding: 70px 0;
-  }
-
-  .accessInner {
-    padding: 0 20px;
-  }
-
-  .accessTitle {
-    font-size: 2.2rem;
-    margin-bottom: 50px;
-  }
-
+@media (min-width: 768px) {
   .content {
-    flex-direction: column;
-    gap: 50px;
-  }
-
-  .info, .mapContainer {
-    min-height: auto;
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   .info {
-    padding: 35px 25px;
+    width: 40%;
   }
 
-  .info dl {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .info dt {
-    font-size: 1.05rem;
-    margin-top: 25px;
-    padding-left: 12px;
-  }
-
-  .info dt:first-child {
-    margin-top: 0;
-  }
-
-  .info dt::before {
-    height: 14px;
-  }
-
-  .info dd {
-    font-size: 1rem;
-    padding-left: 12px;
-  }
-
-  .mapContainer iframe {
-    height: 350px;
+  .mapContainer {
+    width: 60%;
   }
 }
 
-/* ダークモード対応 */
+/* ダークモード */
 @media (prefers-color-scheme: dark) {
   .access {
-    background-color: #1a1a1a;
+    background: #1a1a1a;
   }
 
-  .accessTitle {
+  .infoCard {
+    background: #222;
+  }
+
+  .infoItem dt {
+    color: #999;
+  }
+
+  .tel,
+  .address,
+  .hours {
     color: #fff;
   }
 
-  .info {
-    background-color: #222;
+  .postal {
+    color: #999;
   }
 
-  .info dt {
-    color: #fff;
+  .mapButton {
+    background: #444;
   }
 
-  .info dd {
-    color: #ddd;
+  .mapButton:hover {
+    background: #555;
   }
 } 
