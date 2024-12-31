@@ -4,7 +4,11 @@ import React from 'react';
 import styles from './EsteSection.module.css';
 import commonStyles from '../../styles/common.module.css';
 
-const EsteSection = () => {
+interface EsteSectionProps {
+  // 必要に応じてpropsの型を定義
+}
+
+const EsteSection: React.FC<EsteSectionProps> = () => {
   return (
     <section className={`${styles.este} ${commonStyles.section}`}>
       <div className={commonStyles.sectionInner}>

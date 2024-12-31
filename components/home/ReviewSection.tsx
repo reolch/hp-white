@@ -1,10 +1,15 @@
 'use client';
 
+import React from 'react';
 import styles from './ReviewSection.module.css';
 import { FaStar, FaUserCircle } from 'react-icons/fa';
 import commonStyles from '../../styles/common.module.css';
 
-const ReviewSection = () => {
+interface ReviewSectionProps {
+  // 必要に応じてpropsの型を定義
+}
+
+const ReviewSection: React.FC<ReviewSectionProps> = () => {
   return (
     <section className={`${styles.review} ${commonStyles.section}`}>
       <div className={commonStyles.sectionInner}>

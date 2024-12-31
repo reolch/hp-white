@@ -1,7 +1,12 @@
+import React from 'react';
 import styles from './InstagramSection.module.css';
 import commonStyles from '../../styles/common.module.css';
 
-const InstagramSection = () => {
+interface InstagramSectionProps {
+  // 必要に応じてpropsの型を定義
+}
+
+const InstagramSection: React.FC<InstagramSectionProps> = () => {
   return (
     <section className={`${styles.instagram} ${commonStyles.section}`}>
       <div className={commonStyles.sectionInner}>

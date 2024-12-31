@@ -5,7 +5,11 @@ import styles from './TrainingSection.module.css'; // CSS Modules をインポ�
 import fontStyles from '../common/Font.module.css'; // フォントスタイルのモジュールCSSをインポート
 import commonStyles from '../../styles/common.module.css';
 
-const TrainingSection = () => {
+interface TrainingSectionProps {
+  // 必要に応じてpropsの型を定義
+}
+
+const TrainingSection: React.FC<TrainingSectionProps> = () => {
   return (
     <section className={`${styles.training} ${commonStyles.section}`}>
       <div className={commonStyles.sectionInner}>

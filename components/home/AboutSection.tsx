@@ -4,7 +4,11 @@ import React from 'react';
 import styles from './AboutSection.module.css';
 import commonStyles from '../../styles/common.module.css';
 
-const AboutSection = () => {
+interface AboutSectionProps {
+  // 必要に応じてpropsの型を定義
+}
+
+const AboutSection: React.FC<AboutSectionProps> = () => {
   return (
     <section className={`${styles.about} ${commonStyles.section}`}>
       <div className={commonStyles.sectionInner}>
