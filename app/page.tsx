@@ -6,10 +6,8 @@ import AboutSection from '../components/home/AboutSection'
 import TrainingSection from '../components/home/TrainingSection'
 import EsteSection from '../components/home/EsteSection'
 import CampaignSection from '../components/home/CampaignSection'
-import InstagramSection from '../components/home/InstagramSection'
 import AccessSection from '../components/home/AccessSection'
 import ReviewSection from '../components/home/ReviewSection'
-
 
 export default function Home() {
   return (
@@ -20,7 +18,6 @@ export default function Home() {
       <EsteSection />
       <CampaignSection />
       <ReviewSection />
-      <InstagramSection />
       <AccessSection />
     </div>
   );

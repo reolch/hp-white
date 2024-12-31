@@ -9,7 +9,7 @@
 }
 
 .sectionTitle {
-  font-size: 1.75rem; /* 28px */
+  font-size: 1.25rem; /* 28px */
   text-align: center;
   margin-bottom: 2rem;
   font-weight: bold;
@@ -41,7 +41,7 @@
 }
 
 .cardDescription {
-  font-size: 1rem; /* 16px */
+  font-size: 0.75rem; /* 16px */
   line-height: 1.7;
   margin: 1rem;
   color: #333;
