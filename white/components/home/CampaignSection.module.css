@@ -1,14 +1,13 @@
-/* 基本のスタイル */
+/* モバイル向けベーススタイル */
 .section {
     display: flex;
     flex-direction: column;
     background: linear-gradient(135deg, #2c3e50, #1a1a1a);
-    min-height: 700px;
+    min-height: auto;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
-    padding: 60px 20px;
     position: relative;
     overflow: hidden;
 }
@@ -24,25 +23,14 @@
 }
 
 .content {
-    max-width: 800px;
-    margin: 0 auto;
     position: relative;
     z-index: 1;
 }
 
-.title {
-    font-size: 2.5rem;
-    margin-bottom: 25px;
-    background: linear-gradient(45deg, #fff, #e6e6e6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
 .description {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
     color: #e6e6e6;
     letter-spacing: 0.05em;
 }
@@ -50,13 +38,13 @@
 .price {
     position: relative;
     display: inline-block;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 40px 0;
-    padding: 20px;
+    margin: 30px 0;
+    padding: 15px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
     animation: shine 2s ease-in-out infinite;
 }
@@ -74,11 +62,59 @@
 
 .priceLabel {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #FFD700;
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.benefits {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.benefitsItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.benefitsItem:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.button {
+    background: linear-gradient(45deg, #ff5733, #c70039);
+    color: white;
+    padding: 14px 32px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 87, 51, 0.3);
+    margin-top: 20px;
+}
+
+.button:hover {
+    background: linear-gradient(45deg, #c70039, #ff5733);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 87, 51, 0.4);
+    color: white;
 }
 
 @keyframes shine {
@@ -101,96 +137,74 @@
     }
 }
 
-.benefits {
-    list-style: none;
-    padding: 0;
-    margin: 40px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.benefitsItem {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    padding: 15px 30px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.benefitsItem:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.button {
-    background: linear-gradient(45deg, #ff5733, #c70039);
-    color: white;
-    padding: 16px 40px;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    display: inline-block;
-    transition: all 0.3s ease;
-    border: none;
-    box-shadow: 0 4px 15px rgba(255, 87, 51, 0.3);
-    margin-top: 20px;
-}
-
-.button:hover {
-    background: linear-gradient(45deg, #c70039, #ff5733);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 87, 51, 0.4);
-    color: white;
-}
-
-@media (min-width: 600px) {
-    .title {
-        font-size: 2.8rem;
+/* タブレット向け (768px以上) */
+@media (min-width: 768px) {
+    .description {
+        font-size: 1.1rem;
+        margin-bottom: 35px;
+        line-height: 1.7;
     }
 
-    .description {
-        font-size: 1.3rem;
+    .price {
+        font-size: 4rem;
+        margin: 35px 0;
+        padding: 18px;
+    }
+
+    .priceLabel {
+        font-size: 1.1rem;
     }
 
     .benefits {
-        gap: 25px;
-    }
-}
-
-@media (min-width: 900px) {
-    .section {
-        padding: 80px 40px;
-    }
-
-    .title {
-        font-size: 3.2rem;
-    }
-
-    .description {
-        font-size: 1.4rem;
+        margin: 35px 0;
+        gap: 20px;
     }
 
     .benefitsItem {
-        font-size: 1.3rem;
-        padding: 20px 40px;
+        font-size: 1.1rem;
+        padding: 15px 35px;
     }
 
     .button {
-        padding: 18px 50px;
-        font-size: 1.4rem;
+        padding: 16px 40px;
+        font-size: 1.1rem;
+    }
+}
+
+/* デスクトップ向け (1024px以上) */
+@media (min-width: 1024px) {
+    .section {
+        min-height: 700px;
+    }
+
+    .description {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        line-height: 1.8;
     }
 
     .price {
         font-size: 5rem;
+        margin: 40px 0;
+        padding: 20px;
     }
-    
+
     .priceLabel {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+    }
+
+    .benefits {
+        margin: 40px 0;
+        gap: 25px;
+    }
+
+    .benefitsItem {
+        font-size: 1.2rem;
+        padding: 20px 40px;
+    }
+
+    .button {
+        padding: 18px 48px;
+        font-size: 1.2rem;
     }
 }

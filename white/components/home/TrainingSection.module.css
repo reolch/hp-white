@@ -56,3 +56,8 @@
         flex: 1;
     }
 }
+
+/* モバイル向けベーススタイル */
+.training {
+  background-color: #f8f8f8;
+}

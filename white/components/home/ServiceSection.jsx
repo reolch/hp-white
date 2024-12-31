@@ -2,13 +2,16 @@
 
 import React from 'react';
 import './ServiceSection.css'; // スタイルシートのインポート
+import commonStyles from '../../styles/common.module.css';
 
 const ServicesSection = () => {
   return (
     <section className="services-section">
       <div className="services-content">
         <div className="services-text">
-          <h2 className="services-title">whiteで受けられるサービス</h2>
+          <h2 className={`${commonStyles.sectionTitle} ${commonStyles.servicesTitle}`}>
+            サービス
+          </h2>
           <hr className="services-separator" />
           <p className="services-description">
             パーソナルトレーニングでは<br />

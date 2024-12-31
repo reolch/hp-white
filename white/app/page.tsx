@@ -6,21 +6,25 @@ import HeroSection from '../components/home/HeroSection'
 import AboutSection from '../components/home/AboutSection'
 import TrainingSection from '../components/home/TrainingSection'
 import EsteSection from '../components/home/EsteSection'
-import ServicesSection from '../components/home/ServiceSection'
 import CampaignSection from '../components/home/CampaignSection'
+import InstagramSection from '../components/home/InstagramSection'
+import AccessSection from '../components/home/AccessSection'
+import ReviewSection from '../components/home/ReviewSection'
 import Footer from '../components/common/Footer'
 
 export default function Home() {
   return (
     <div className='wrapper'>
       <Header />
-      <HeroSection></HeroSection>
-      <AboutSection></AboutSection>
-      <TrainingSection></TrainingSection>
-      <EsteSection></EsteSection>
-      <ServicesSection></ServicesSection>
-      <CampaignSection></CampaignSection>
-      <Footer></Footer>
+      <HeroSection />
+      <AboutSection />
+      <TrainingSection />
+      <EsteSection />
+      <CampaignSection />
+      <ReviewSection />
+      <InstagramSection />
+      <AccessSection />
+      <Footer />
     </div>
   );
 }

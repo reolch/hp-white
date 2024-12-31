@@ -1,0 +1,41 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # メインブランチにプッシュされた時に実行
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /white  # リポジトリ名を指定
+
+      - name: Export static files
+        run: npm run export
+
+      - name: Add .nojekyll file
+        run: touch ./out/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # デプロイ先のブランチ
+          folder: out  # デプロイするフォルダ
+          clean: true  # デプロイ前にgh-pagesブランチをクリーン 
