@@ -1,182 +1,83 @@
-.review {
-  background: linear-gradient(to bottom, #fff 0%, #f8f8f8 100%);
-}
-
 .reviews {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 1.5rem;
 }
 
 .reviewCard {
-  padding: 35px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.03);
-}
-
-.reviewCard::before {
-  content: '"';
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  font-size: 120px;
-  color: rgba(255,105,180,0.05);
-  font-family: serif;
-  line-height: 1;
-}
-
-.reviewCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  background: white;
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .rating {
   color: #ffd700;
-  margin-bottom: 20px;
-  display: flex;
-  gap: 8px;
-  font-size: 1.1rem;
-}
-
-.userIcon {
-  font-size: 48px;
-  color: #ff69b4;
-  margin-bottom: 20px;
-  opacity: 0.8;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .reviewContent {
-  position: relative;
-  z-index: 1;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.6;
+}
+
+.userIcon {
+  font-size: 2.5rem;
+  color: #666;
+  margin-bottom: 0.75rem;
 }
 
 .comment {
-  margin-bottom: 25px;
-  line-height: 1.9;
-  font-size: 0.95rem;
-  color: #444;
-  position: relative;
-  padding-left: 24px;
-}
-
-.comment::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 3px;
-  height: calc(100% - 16px);
-  background: linear-gradient(to bottom, #ff69b4 0%, rgba(255,105,180,0.3) 100%);
-  border-radius: 2px;
+  margin-bottom: 1rem;
 }
 
 .author {
-  text-align: right;
+  font-weight: bold;
   color: #333;
-  font-size: 0.92rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
 }
 
 .date {
-  text-align: right;
-  color: #888;
-  font-size: 0.82rem;
-  margin-top: 6px;
+  color: #666;
+  font-size: 0.75rem; /* 12px */
 }
 
 .moreButton {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 2rem;
 }
 
 .moreButton button {
-  padding: 16px 48px;
-  background: transparent;
-  border: 2px solid #ff69b4;
-  color: #ff69b4;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 0.95rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  letter-spacing: 0.1em;
-  position: relative;
-  overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
-.moreButton button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: #ff69b4;
-  transition: width 0.3s ease;
-  z-index: -1;
-}
-
-.moreButton button:hover {
-  color: #fff;
-}
-
-.moreButton button:hover::before {
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  .review {
-    padding: 60px 15px;
-  }
-
-  .review h2 {
-    font-size: 1.8rem;
-    margin-bottom: 50px;
-  }
-
-  .reviews {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    padding: 0 10px;
-  }
-
-  .reviewCard {
-    padding: 25px;
-  }
-
-  .comment {
-    font-size: 0.9rem;
-    padding-left: 18px;
-  }
-
-  .moreButton {
-    margin-top: 40px;
-  }
-
-  .moreButton button {
-    padding: 14px 36px;
-    font-size: 0.9rem;
-  }
-}
-
-/* タブレット向け */
+/* タブレット以上 */
 @media (min-width: 768px) {
   .reviews {
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 2rem;
+  }
+
+  .reviewContent {
+    font-size: 1rem; /* 16px */
+  }
+
+  .moreButton button {
+    font-size: 1.125rem;
   }
 }
 
-/* デスクトップ向け */
+/* デスクトップ */
 @media (min-width: 1024px) {
   .reviews {
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 2.5rem;
   }
 } 

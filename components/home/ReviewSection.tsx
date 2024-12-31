@@ -13,9 +13,7 @@ const ReviewSection: React.FC<ReviewSectionProps> = () => {
   return (
     <section className={`${styles.review} ${commonStyles.section}`}>
       <div className={commonStyles.sectionInner}>
-        <h2 className={`${commonStyles.sectionTitle} ${commonStyles.reviewTitle}`}>
-          お客様の声
-        </h2>
+        <h2 className={commonStyles.sectionTitle}>お客様の声</h2>
         <div className={styles.reviews}>
           <div className={styles.reviewCard}>
             <div className={styles.rating}>
