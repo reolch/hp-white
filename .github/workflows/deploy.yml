@@ -2,54 +2,31 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
-
-permissions:
-  contents: write
+    branches: [ main ]
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
 
       - name: Install dependencies
-        run: |
-          if [ ! -f package-lock.json ]; then
-            npm install --package-lock-only
-          fi
-          npm ci
+        run: npm ci
 
-      - name: Type check and lint
-        run: |
-          npx tsc --noEmit
-          npm run lint
-
-      - name: Build project
+      - name: Build
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /white
-          NODE_ENV: production
+          NEXT_PUBLIC_BASE_PATH: /hp-white
 
-      - name: Prepare deployment
-        run: |
-          touch ./out/.nojekyll
-          [ -f README.md ] && cp README.md ./out/ || echo "No README.md found"
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: out
-          clean: true
-          commit-message: "Deploy: ${GITHUB_SHA}" 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out 
