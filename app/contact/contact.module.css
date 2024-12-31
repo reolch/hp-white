@@ -1,0 +1,265 @@
+/* ベーススタイル（モバイル） */
+.main {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ヘッダーセクション */
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('/contact-header.jpg') center/cover no-repeat;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.headerTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.headerDescription {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* フォームセクション */
+.formSection {
+  padding: 40px 20px;
+  background: #f8f8f8;
+}
+
+.form {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.required {
+  background: #ff4444;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+
+.optional {
+  background: #999;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.error {
+  color: #ff4444;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.submitContainer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.submitButton {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background: #45a049;
+}
+
+/* その他の連絡方法セクション */
+.otherContact {
+  background: white;
+  padding: 40px 20px;
+}
+
+.contactMethods {
+  display: grid;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contactMethod {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f8f8;
+  border-radius: 12px;
+}
+
+.contactMethod h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.phone {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4CAF50;
+  margin: 1rem 0;
+}
+
+.hours {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.lineButton {
+  background: #00B900;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.lineButton:hover {
+  background: #009900;
+}
+
+/* タブレット (768px以上) */
+@media (min-width: 768px) {
+  .headerTitle {
+    font-size: 2.5rem;
+  }
+
+  .headerDescription {
+    font-size: 1.125rem;
+  }
+
+  .form {
+    padding: 3rem;
+  }
+
+  .contactMethods {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .spOnly {
+    display: none;
+  }
+}
+
+/* デスクトップ (1024px以上) */
+@media (min-width: 1024px) {
+  .header {
+    padding: 80px 20px;
+  }
+
+  .headerTitle {
+    font-size: 3rem;
+  }
+
+  .form {
+    padding: 4rem;
+  }
+
+  .input:hover,
+  .select:hover,
+  .textarea:hover {
+    border-color: #4CAF50;
+  }
+
+  .contactMethod {
+    transition: transform 0.3s ease;
+  }
+
+  .contactMethod:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .form {
+    background: #222;
+  }
+
+  .label {
+    color: #fff;
+  }
+
+  .input,
+  .select,
+  .textarea {
+    background: #333;
+    border-color: #444;
+    color: #fff;
+  }
+
+  .contactMethod {
+    background: #222;
+  }
+
+  .contactMethod h3 {
+    color: #fff;
+  }
+
+  .hours {
+    color: #ccc;
+  }
+
+  .formSection {
+    background: #1a1a1a;
+  }
+
+  .otherContact {
+    background: #1a1a1a;
+  }
+} 

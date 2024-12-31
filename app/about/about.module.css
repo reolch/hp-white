@@ -1,0 +1,200 @@
+/* ベーススタイル（モバイル） */
+.main {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ヒーローセクション */
+.hero {
+  position: relative;
+  height: 50vh;
+  min-height: 300px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('/images/about/hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.heroContent {
+  max-width: 800px;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* ミッションセクション */
+.mission {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.missionText {
+  font-size: 1.1rem;
+  line-height: 2;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+/* 特徴セクション */
+.featureGrid {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.featureItem {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.featureImage {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.featureImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featureItem h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1rem;
+  color: #333;
+}
+
+.featureItem p {
+  margin: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* 施設情報セクション */
+.facilityInfo {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.facilityText {
+  order: 2;
+}
+
+.infoList {
+  display: grid;
+  gap: 1rem;
+}
+
+.infoList dt {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.infoList dd {
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+}
+
+.facilityImage {
+  order: 1;
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.facilityImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* タブレット (768px以上) */
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .featureGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .facilityInfo {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .facilityText {
+    order: 1;
+  }
+
+  .facilityImage {
+    order: 2;
+    height: 400px;
+  }
+}
+
+/* デスクトップ (1024px以上) */
+@media (min-width: 1024px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .featureGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .featureItem:hover .featureImage img {
+    transform: scale(1.05);
+  }
+
+  .infoList {
+    font-size: 1.1rem;
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .featureItem {
+    background: #222;
+  }
+
+  .featureItem h3 {
+    color: #fff;
+  }
+
+  .featureItem p {
+    color: #ccc;
+  }
+
+  .infoList dt {
+    color: #fff;
+  }
+
+  .infoList dd {
+    color: #ccc;
+  }
+} 

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Header.module.css';
 
 interface HeaderProps {}
@@ -16,11 +17,14 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <header className={styles.header}>
       <div className={styles['header-top']}>
-        <Link href="/">
-          <img 
-            src="header_logo.svg" 
-            alt="Logo" 
-            className={styles.logo} 
+        <Link href="/" className={styles.logoLink}>
+          <Image 
+            src="/images/logo/logo.svg" 
+            alt="WHITE" 
+            width={120}
+            height={40}
+            priority
+            className={styles.logo}
           />
         </Link>
         <button 
@@ -37,28 +41,28 @@ const Header: React.FC<HeaderProps> = () => {
         } noto-serif-jp-bold`}
       >
         <ul>
-          <li><Link href="#about">About</Link></li>
+          <li><Link href="/about">About</Link></li>
           <li className={styles.serviceDropdown}>
-            <Link href="#service" className={styles.serviceLink}>
+            <Link href="" className={styles.serviceLink}>
               サービス <span className={styles.dropdownArrow}>▼</span>
             </Link>
             <div className={styles.dropdownMenu}>
               <ul>
                 <li>
-                  <Link href="#training">
+                  <Link href="/training">
                     パーソナルトレーニング
                   </Link>
                 </li>
                 <li>
-                  <Link href="#esthetic">
+                  <Link href="/este">
                     痩身エステ
                   </Link>
                 </li>
               </ul>
             </div>
           </li>
-          <li><Link href="#plans">料金</Link></li>
-          <li><Link href="#contact">お問い合わせ</Link></li>
+          <li><Link href="/price">料金</Link></li>
+          <li><Link href="/contact">お問い合わせ</Link></li>
         </ul>
       </nav>
     </header>

@@ -1,8 +1,8 @@
 "use client";
 
 import React from 'react';
-import styles from './TrainingSection.module.css'; // CSS Modules をインポート
-import fontStyles from '../common/Font.module.css'; // フォントスタイルのモジュールCSSをインポート
+import Image from 'next/image';
+import styles from './TrainingSection.module.css';
 import commonStyles from '../../styles/common.module.css';
 
 interface TrainingSectionProps {
@@ -18,7 +18,15 @@ const TrainingSection: React.FC<TrainingSectionProps> = () => {
         </h2>
         <div className={commonStyles.cardGrid}>
           <div className={commonStyles.card}>
-            <img src="slide1.jpg" alt="ウェイトトレーニング" className={commonStyles.cardImage} />
+            <div className={commonStyles.cardImageWrapper}>
+              <Image
+                src="/images/hero/slide1.jpg"
+                alt="ウェイトトレーニング"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className={commonStyles.cardImage}
+              />
+            </div>
             <h3 className={commonStyles.cardTitle}>ウェイトトレーニング</h3>
             <p className={commonStyles.cardDescription}>
               理想の身体をつくる為には、重りを使ったウェイトトレーニングが最も効果的です。
@@ -27,7 +35,15 @@ const TrainingSection: React.FC<TrainingSectionProps> = () => {
           </div>
 
           <div className={commonStyles.card}>
-            <img src="slide2.jpg" alt="有酸素運動" className={commonStyles.cardImage} />
+            <div className={commonStyles.cardImageWrapper}>
+              <Image
+                src="/images/hero/slide2.jpg"
+                alt="有酸素運動"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className={commonStyles.cardImage}
+              />
+            </div>
             <h3 className={commonStyles.cardTitle}>有酸素運動</h3>
             <p className={commonStyles.cardDescription}>
               地方在住の方は、普段の生活から車移動が多く、有酸素運動をする機会が少ないため、都市部在住の方に比べて一日の消費カロリーが少ない傾向にあります。
@@ -36,7 +52,15 @@ const TrainingSection: React.FC<TrainingSectionProps> = () => {
           </div>
 
           <div className={commonStyles.card}>
-            <img src="slide3.jpg" alt="HIIT" className={commonStyles.cardImage} />
+            <div className={commonStyles.cardImageWrapper}>
+              <Image
+                src="/images/hero/slide3.jpg"
+                alt="HIIT"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className={commonStyles.cardImage}
+              />
+            </div>
             <h3 className={commonStyles.cardTitle}>HIIT</h3>
             <p className={commonStyles.cardDescription}>
               1セット20〜30秒のインターバルトレーニングを約2分から4分間連続して行うことで、従来の有酸素運動の約9倍もの脂肪燃焼効果を得ることができます。

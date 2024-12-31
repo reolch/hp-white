@@ -1,0 +1,288 @@
+/* ベーススタイル（モバイル） */
+.main {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ヘッダーセクション */
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('/price-header.jpg') center/cover no-repeat;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.headerTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.headerDescription {
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 料金カードセクション */
+.priceSection {
+  padding: 40px 20px;
+}
+
+.priceCards {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.priceCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+.cardHeader {
+  background: #f8f8f8;
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.cardHeader h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.price span {
+  font-size: 1rem;
+  color: #666;
+}
+
+.cardBody {
+  padding: 1.5rem;
+}
+
+.cardBody ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cardBody li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #333;
+  font-size: 0.875rem;
+}
+
+.cardBody li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+}
+
+.recommendBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #FF4081;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  border-bottom-left-radius: 8px;
+}
+
+/* オプションセクション */
+.optionList {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.optionItem {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.optionItem h3 {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+}
+
+.optionPrice {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #4CAF50;
+  margin: 0;
+}
+
+/* 注意事項セクション */
+.notesList {
+  background: #f8f8f8;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.notesList p {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+/* CTA セクション */
+.cta {
+  background: #f8f8f8;
+  text-align: center;
+}
+
+.ctaDescription {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.ctaButton {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: #45a049;
+}
+
+/* タブレット (768px以上) */
+@media (min-width: 768px) {
+  .headerTitle {
+    font-size: 2.5rem;
+  }
+
+  .headerDescription {
+    font-size: 1.125rem;
+  }
+
+  .priceCards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .optionList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .cardHeader h3 {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 2.25rem;
+  }
+
+  .cardBody li {
+    font-size: 1rem;
+  }
+
+  .optionItem h3 {
+    font-size: 1.125rem;
+  }
+
+  .optionPrice {
+    font-size: 1.25rem;
+  }
+
+  .notesList p {
+    font-size: 1rem;
+  }
+}
+
+/* デスクトップ (1024px以上) */
+@media (min-width: 1024px) {
+  .header {
+    padding: 80px 20px;
+  }
+
+  .headerTitle {
+    font-size: 3rem;
+  }
+
+  .priceCards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .optionList {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .priceCard {
+    transition: transform 0.3s ease;
+  }
+
+  .priceCard:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .priceCard,
+  .optionItem {
+    background: #222;
+  }
+
+  .cardHeader {
+    background: #2a2a2a;
+    border-bottom-color: #333;
+  }
+
+  .cardHeader h3,
+  .cardBody li,
+  .optionItem h3 {
+    color: #fff;
+  }
+
+  .notesList {
+    background: #2a2a2a;
+  }
+
+  .notesList p {
+    color: #ccc;
+  }
+
+  .cta {
+    background: #1a1a1a;
+  }
+
+  .ctaDescription {
+    color: #fff;
+  }
+} 

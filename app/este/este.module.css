@@ -1,0 +1,284 @@
+/* ベーススタイル（モバイル） */
+.main {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ヒーローセクション */
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              url('/este-hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.heroContent {
+  color: white;
+  max-width: 800px;
+}
+
+.heroTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* メニューセクション */
+.menuList {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.menuItem {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.menuItem h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.menuItem p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.menuItem ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.menuItem li {
+  font-size: 0.875rem;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #333;
+}
+
+.menuItem li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #FF69B4;
+}
+
+.time {
+  font-size: 0.875rem;
+  color: #FF69B4;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 1rem;
+}
+
+/* 料金プラン */
+.priceCards {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.priceCard {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.priceCard h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FF69B4;
+  margin-bottom: 1.5rem;
+}
+
+.priceCard ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.priceCard li {
+  font-size: 0.875rem;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.priceCard li::before {
+  content: "•";
+  position: absolute;
+  left: 0.5rem;
+  color: #FF69B4;
+}
+
+/* CTA セクション */
+.cta {
+  background: #FFF5F8;
+  text-align: center;
+}
+
+.ctaDescription {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.ctaButton {
+  background: #FF69B4;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: #FF1493;
+}
+
+/* タブレット (768px以上) */
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.25rem;
+  }
+
+  .menuList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .priceCards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .menuItem h3,
+  .priceCard h3 {
+    font-size: 1.5rem;
+  }
+
+  .menuItem p,
+  .menuItem li,
+  .priceCard li {
+    font-size: 1rem;
+  }
+
+  .time {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1.75rem;
+  }
+
+  .ctaDescription {
+    font-size: 1.125rem;
+  }
+
+  .ctaButton {
+    font-size: 1.125rem;
+    padding: 1.25rem 3rem;
+  }
+}
+
+/* デスクトップ (1024px以上) */
+@media (min-width: 1024px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.5rem;
+  }
+
+  .menuList {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .priceCards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .menuItem,
+  .priceCard {
+    transition: transform 0.3s ease;
+  }
+
+  .menuItem:hover,
+  .priceCard:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .menuItem,
+  .priceCard {
+    background: #222;
+  }
+
+  .menuItem h3,
+  .priceCard h3,
+  .menuItem li,
+  .priceCard li {
+    color: #fff;
+  }
+
+  .menuItem p {
+    color: #ccc;
+  }
+
+  .cta {
+    background: #1a1a1a;
+  }
+
+  .ctaDescription {
+    color: #fff;
+  }
+
+  .time {
+    color: #FF69B4;
+  }
+} 

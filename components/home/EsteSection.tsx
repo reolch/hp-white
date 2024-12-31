@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import styles from './EsteSection.module.css';
 import commonStyles from '../../styles/common.module.css';
 
@@ -17,7 +18,15 @@ const EsteSection: React.FC<EsteSectionProps> = () => {
         </h2>
         <div className={commonStyles.cardGrid}>
           <div className={commonStyles.card}>
-            <img src="slide1.jpg" alt="脂肪燃焼痩身マシン" className={commonStyles.cardImage} />
+            <div className={commonStyles.cardImageWrapper}>
+              <Image
+                src="/images/hero/slide1.jpg"
+                alt="脂肪燃焼痩身マシン"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className={commonStyles.cardImage}
+              />
+            </div>
             <h3 className={commonStyles.cardTitle}>脂肪燃焼痩身マシン</h3>
             <p className={commonStyles.cardDescription}>
               熱の伝わりがはやいバイポーラ式ラジオ波を採用することで、短時間で頑固な冷え切った脂肪を芯までほぐし温めることができます。
@@ -26,7 +35,15 @@ const EsteSection: React.FC<EsteSectionProps> = () => {
             </p>
           </div>
           <div className={commonStyles.card}>
-            <img src="slide2.jpg" alt="有酸素運動" className={commonStyles.cardImage} />
+            <div className={commonStyles.cardImageWrapper}>
+              <Image
+                src="/images/hero/slide2.jpg"
+                alt="リンパドレナージュ"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className={commonStyles.cardImage}
+              />
+            </div>
             <h3 className={commonStyles.cardTitle}>リンパドレナージュ</h3>
             <p className={commonStyles.cardDescription}>
               脂肪燃焼痩身マシンでほぐした後に、流れやすくなったリンパ液や老廃物を、オイルを使ったハンドマッサージでアプローチすることにより、施術箇所の老廃物を流し、脂肪燃焼を促します。
