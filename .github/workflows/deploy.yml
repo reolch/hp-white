@@ -3,7 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # メインブランチにプッシュされた時に実行
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
@@ -12,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -20,22 +26,33 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
+          npm install next@latest react@latest react-dom@latest
+          npm install -D @types/node @types/react @types/react-dom typescript eslint eslint-config-next
+
+      - name: Type check
+        run: npx tsc --noEmit
+
+      - name: Lint
+        run: npm run lint
 
       - name: Build project
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /white  # リポジトリ名を指定
-
-      - name: Export static files
-        run: npm run export
+          NEXT_PUBLIC_BASE_PATH: /white
+          NODE_ENV: production
 
       - name: Add .nojekyll file
-        run: touch ./out/.nojekyll
+        run: |
+          touch ./out/.nojekyll
+          cp README.md ./out/ || true
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages  # デプロイ先のブランチ
-          folder: out  # デプロイするフォルダ
-          clean: true  # デプロイ前にgh-pagesブランチをクリーン 
+          branch: gh-pages
+          folder: out
+          clean: true
+          commit-message: "Deploy: ${GITHUB_SHA}" 
