@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -27,16 +25,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          rm -rf node_modules package-lock.json
-          npm install
-          npm install next@latest react@latest react-dom@latest
-          npm install -D @types/node @types/react @types/react-dom typescript eslint eslint-config-next
+          if [ ! -f package-lock.json ]; then
+            npm install --package-lock-only
+          fi
+          npm ci
 
-      - name: Type check
-        run: npx tsc --noEmit
-
-      - name: Lint
-        run: npm run lint
+      - name: Type check and lint
+        run: |
+          npx tsc --noEmit
+          npm run lint
 
       - name: Build project
         run: npm run build
@@ -44,10 +41,10 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /white
           NODE_ENV: production
 
-      - name: Add .nojekyll file
+      - name: Prepare deployment
         run: |
           touch ./out/.nojekyll
-          cp README.md ./out/ || true
+          [ -f README.md ] && cp README.md ./out/ || echo "No README.md found"
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
