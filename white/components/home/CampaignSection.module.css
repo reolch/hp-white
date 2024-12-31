@@ -1,0 +1,196 @@
+/* 基本のスタイル */
+.section {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #2c3e50, #1a1a1a);
+    min-height: 700px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    background: linear-gradient(45deg, #fff, #e6e6e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    color: #e6e6e6;
+    letter-spacing: 0.05em;
+}
+
+.price {
+    position: relative;
+    display: inline-block;
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 40px 0;
+    padding: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    animation: shine 2s ease-in-out infinite;
+}
+
+.price::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255,215,0,0.2) 0%, transparent 70%);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.priceLabel {
+    display: block;
+    font-size: 1.2rem;
+    color: #FFD700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@keyframes shine {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.2;
+    }
+}
+
+.benefits {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.benefitsItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.benefitsItem:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.button {
+    background: linear-gradient(45deg, #ff5733, #c70039);
+    color: white;
+    padding: 16px 40px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 87, 51, 0.3);
+    margin-top: 20px;
+}
+
+.button:hover {
+    background: linear-gradient(45deg, #c70039, #ff5733);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 87, 51, 0.4);
+    color: white;
+}
+
+@media (min-width: 600px) {
+    .title {
+        font-size: 2.8rem;
+    }
+
+    .description {
+        font-size: 1.3rem;
+    }
+
+    .benefits {
+        gap: 25px;
+    }
+}
+
+@media (min-width: 900px) {
+    .section {
+        padding: 80px 40px;
+    }
+
+    .title {
+        font-size: 3.2rem;
+    }
+
+    .description {
+        font-size: 1.4rem;
+    }
+
+    .benefitsItem {
+        font-size: 1.3rem;
+        padding: 20px 40px;
+    }
+
+    .button {
+        padding: 18px 50px;
+        font-size: 1.4rem;
+    }
+
+    .price {
+        font-size: 5rem;
+    }
+    
+    .priceLabel {
+        font-size: 1.4rem;
+    }
+}

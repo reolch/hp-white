@@ -1,0 +1,114 @@
+.footer {
+  background-color: #f5f5f5;
+  padding: 40px 20px 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.logoSection {
+  text-align: center;
+}
+
+.logo {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.address {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.navColumn {
+  text-align: center;
+}
+
+.navTitle {
+  font-size: 16px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+}
+
+.navList li {
+  margin-bottom: 12px;
+}
+
+.navList a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.navList a:hover {
+  color: #666;
+}
+
+.bottom {
+  margin-top: 40px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.copyright {
+  font-size: 12px;
+}
+
+/* タブレット以上のスタイル */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .logoSection {
+    text-align: left;
+  }
+
+  .nav {
+    flex-direction: row;
+    gap: 64px;
+  }
+
+  .navColumn {
+    text-align: left;
+  }
+}
+
+/* デスクトップのスタイル */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  .navTitle {
+    font-size: 18px;
+  }
+
+  .navList a {
+    font-size: 16px;
+  }
+}

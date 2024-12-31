@@ -1,0 +1,80 @@
+/* モバイルファーストの基本スタイル */
+.services-section {
+    /* display: flex; */
+    background-color: #fff;
+    margin-top: 120px;
+    justify-content: center;
+}
+
+.services-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.services-text {
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+.services-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.services-separator {
+    border: 1px solid #ddd;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.services-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+strong {
+    color: #ff5733;
+    /* ハイライトカラー */
+}
+
+.services-image {
+    width: 100%;
+    max-width: 600px;
+}
+
+.services-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* レスポンシブデザイン */
+@media (min-width: 768px) {
+
+    .services-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .services-title {
+        font-size: 2.2rem;
+    }
+
+    .services-description {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .services-title {
+        font-size: 2.5rem;
+    }
+
+    .services-description {
+        font-size: 1.2rem;
+    }
+}
