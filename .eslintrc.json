@@ -1,11 +1,3 @@
 {
-  "root": true,
-  "extends": ["next/core-web-vitals"],
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "overrideConfig": {
-    "linterOptions": {
-      "reportUnusedDisableDirectives": "warn"
-    }
-  }
+  "extends": "next/core-web-vitals"
 } 
