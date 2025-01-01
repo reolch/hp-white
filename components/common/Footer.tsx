@@ -15,8 +15,8 @@ const Footer: React.FC<FooterProps> = () => {
         <div className={styles.logoSection}>
           <h2 className={styles.logo}>white</h2>
           <p className={styles.address}>
-            〒880-0805<br />
-            宮崎県宮崎市橘通東3-5-1
+          〒880-0055<br />
+          宮崎県宮崎市南花ケ島町１３２−１ 川村ビル １F
           </p>
         </div>
 
@@ -27,7 +27,6 @@ const Footer: React.FC<FooterProps> = () => {
               <li><Link href="/about">About</Link></li>
               <li><Link href="/training">Training</Link></li>
               <li><Link href="/este">Este</Link></li>
-              <li><Link href="/service">Service</Link></li>
             </ul>
           </div>
 
@@ -35,7 +34,6 @@ const Footer: React.FC<FooterProps> = () => {
             <h3 className={styles.navTitle}>Contact</h3>
             <ul className={styles.navList}>
               <li><Link href="/contact">お問い合わせ</Link></li>
-              <li><Link href="/reserve">ご予約</Link></li>
             </ul>
           </div>
         </nav>

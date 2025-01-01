@@ -15,16 +15,16 @@ const AccessSection: React.FC = () => {
                 <div className={styles.infoItem}>
                   <dt>住所</dt>
                   <dd>
-                    <p className={styles.postal}>〒000-0000</p>
-                    <p className={styles.address}>東京都...</p>
+                    <p className={styles.postal}>〒880-0055</p>
+                    <p className={styles.address}>宮崎県宮崎市南花ケ島町１３２−１ 川村ビル １F</p>
                   </dd>
                 </div>
                 
                 <div className={styles.infoItem}>
                   <dt>電話番号</dt>
                   <dd>
-                    <a href="tel:0300000000" className={styles.tel}>
-                      03-0000-0000
+                    <a href="tel:070-9107-1717" className={styles.tel}>
+                    070-9107-1717
                     </a>
                   </dd>
                 </div>
@@ -38,7 +38,7 @@ const AccessSection: React.FC = () => {
                 
                 <div className={styles.infoItem}>
                   <dt>定休日</dt>
-                  <dd>水曜日</dd>
+                  <dd>不定休</dd>
                 </div>
               </dl>
 
