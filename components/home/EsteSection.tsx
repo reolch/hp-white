@@ -14,13 +14,13 @@ const EsteSection: React.FC<EsteSectionProps> = () => {
     <section className={`${styles.este} ${commonStyles.section}`}>
       <div className={commonStyles.sectionInner}>
         <h2 className={`${commonStyles.sectionTitle} ${commonStyles.esteTitle}`}>
-          エステ
+          エステ&整体
         </h2>
         <div className={commonStyles.cardGrid}>
           <div className={commonStyles.card}>
             <div className={commonStyles.cardImageWrapper}>
               <Image
-                src="/images/hero/slide1.jpg"
+                src="/images/hero/slide2.jpg"
                 alt="脂肪燃焼痩身マシン"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -37,7 +37,7 @@ const EsteSection: React.FC<EsteSectionProps> = () => {
           <div className={commonStyles.card}>
             <div className={commonStyles.cardImageWrapper}>
               <Image
-                src="/images/hero/slide2.jpg"
+                src="/images/rinpa.jpg"
                 alt="リンパドレナージュ"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -48,6 +48,24 @@ const EsteSection: React.FC<EsteSectionProps> = () => {
             <p className={commonStyles.cardDescription}>
               脂肪燃焼痩身マシンでほぐした後に、流れやすくなったリンパ液や老廃物を、オイルを使ったハンドマッサージでアプローチすることにより、施術箇所の老廃物を流し、脂肪燃焼を促します。
               ただのマッサージではなく、国家資格保有者が監修するリンパドレナージュを行うことで、あなたの身体や体質に合わせた施術と至高の時間をお楽しみくださいませ。
+            </p>
+          </div>
+
+          <div className={commonStyles.card}>
+            <div className={commonStyles.cardImageWrapper}>
+              <Image
+                src="/images/骨盤矯正.jpg"
+                alt="骨盤矯正"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className={commonStyles.cardImage}
+              />
+            </div>
+            <h3 className={commonStyles.cardTitle}>骨盤矯正</h3>
+            <p className={commonStyles.cardDescription}>
+              国家資格保有者による骨盤矯正のサービスもご用意しています。
+              産後で歪んだ骨盤を適切な位置に調整を行い産後のウエストダウンをサポートします。
+              さらに、骨盤矯正とラジオ波を組み合わせる当店独自のメニューで産後ダイエットのお悩みを解決することが可能です。
             </p>
           </div>
         </div>

@@ -1,14 +1,24 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import styles from './training.module.css';
 import commonStyles from '../../styles/common.module.css';
 
 const TrainingPage = () => {
   return (
     <main className={styles.main}>
-      {/* ヒーローセクション */}
       <section className={styles.hero}>
+        <Image
+          src="/images/trainingpage/program.jpg"
+          alt="パーソナルトレーニングの様子"
+          className={styles.heroImage}
+          priority
+          quality={90}
+          fill
+          style={{objectFit: "cover"}}
+        />
+
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>パーソナルトレーニング</h1>
           <p className={styles.heroSubtitle}>あなたに合わせたオーダーメイドの指導で理想の体づくりをサポート</p>
@@ -21,21 +31,44 @@ const TrainingPage = () => {
           <h2 className={commonStyles.sectionTitle}>特徴</h2>
           <div className={commonStyles.cardGrid}>
             <div className={commonStyles.card}>
-              <img src="/trainer1.jpg" alt="経験豊富なトレーナー" className={commonStyles.cardImage} />
+              <Image 
+                src="/images/trainingpage/trainer.jpg" 
+                alt="経験豊富なトレーナー" 
+                className={commonStyles.cardImage}
+                width={400}
+                height={300}
+              />
+
               <h3 className={commonStyles.cardTitle}>経験豊富なトレーナー</h3>
               <p className={commonStyles.cardDescription}>
                 国家資格保有者を含む経験豊富なトレーナーが、あなたの目標達成をサポートします。
               </p>
             </div>
+
             <div className={commonStyles.card}>
-              <img src="/facility.jpg" alt="充実した設備" className={commonStyles.cardImage} />
+              <Image 
+                src="/images/trainingpage/facility.jpg" 
+                alt="充実した設備" 
+                className={commonStyles.cardImage}
+                width={400}
+                height={300}
+              />
+
               <h3 className={commonStyles.cardTitle}>充実した設備</h3>
               <p className={commonStyles.cardDescription}>
                 最新のトレーニングマシンを完備。効率的なトレーニングを可能にします。
               </p>
             </div>
+
             <div className={commonStyles.card}>
-              <img src="/program.jpg" alt="オーダーメイドプログラム" className={commonStyles.cardImage} />
+              <Image 
+                src="/images/trainingpage/program.jpg" 
+                alt="オーダーメイドプログラム" 
+                className={commonStyles.cardImage}
+                width={400}
+                height={300}
+              />
+
               <h3 className={commonStyles.cardTitle}>オーダーメイドプログラム</h3>
               <p className={commonStyles.cardDescription}>
                 お客様一人ひとりの目標や体力に合わせた、カスタマイズされたプログラムを提供します。
@@ -50,6 +83,7 @@ const TrainingPage = () => {
         <div className={commonStyles.sectionInner}>
           <h2 className={commonStyles.sectionTitle}>トレーニングプログラム</h2>
           <div className={styles.programList}>
+
             <div className={styles.programItem}>
               <h3>ダイエットプログラム</h3>
               <p>体脂肪減少と筋力アップを同時に実現。理想的なボディメイクを目指します。</p>
@@ -60,6 +94,7 @@ const TrainingPage = () => {
                 <li>定期的な経過観察</li>
               </ul>
             </div>
+
             <div className={styles.programItem}>
               <h3>筋力アッププログラム</h3>
               <p>正しいフォームと効果的なメニューで、効率的な筋力アップを実現します。</p>
@@ -70,6 +105,7 @@ const TrainingPage = () => {
                 <li>栄養サポート</li>
               </ul>
             </div>
+
             <div className={styles.programItem}>
               <h3>コンディショニングプログラム</h3>
               <p>姿勢改善や体の歪み改善に焦点を当てたプログラムです。</p>
@@ -89,6 +125,7 @@ const TrainingPage = () => {
         <div className={commonStyles.sectionInner}>
           <h2 className={commonStyles.sectionTitle}>料金プラン</h2>
           <div className={styles.priceCards}>
+
             <div className={styles.priceCard}>
               <h3>体験コース</h3>
               <p className={styles.price}>¥5,500</p>
@@ -98,6 +135,7 @@ const TrainingPage = () => {
                 <li>体組成測定</li>
               </ul>
             </div>
+
             <div className={styles.priceCard}>
               <h3>スタンダードプラン</h3>
               <p className={styles.price}>¥13,200 / 回</p>
@@ -107,6 +145,7 @@ const TrainingPage = () => {
                 <li>プログラム作成</li>
               </ul>
             </div>
+            
             <div className={styles.priceCard}>
               <h3>集中プラン</h3>
               <p className={styles.price}>¥110,000 / 月</p>
@@ -135,4 +174,4 @@ const TrainingPage = () => {
   );
 };
 
-export default TrainingPage; 
+export default TrainingPage;

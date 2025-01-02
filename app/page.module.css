@@ -1,0 +1,26 @@
+.main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* 最大幅を制限 */
+  margin: 0 auto;
+}
+
+.responsiveImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* 画像のアスペクト比を保持 */
+  border-radius: 8px; /* 必要に応じて角丸に */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .imageWrapper {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
