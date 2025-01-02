@@ -33,7 +33,7 @@ const TrainingPage = () => {
             <div className={commonStyles.card}>
               <div className={commonStyles.cardImageWrapper}>
                 <Image 
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/training/trainer.jpg`}
+                  src="/images/trainingpage/trainer.jpg"
                   alt="経験豊富なトレーナー" 
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

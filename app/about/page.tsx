@@ -10,6 +10,15 @@ const AboutPage = () => {
     <main className={styles.main}>
       {/* ヒーローセクション */}
       <section className={styles.hero}>
+      <Image
+                    src="/images/About/hero.jpg"
+                    alt="アバウトページのヒーロー画像"
+                    className={styles.heroImage}
+                    priority
+                    quality={90}
+                    fill
+                    style={{ objectFit: "cover" }}
+                />
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>About Us</h1>
           <p className={styles.heroSubtitle}>
