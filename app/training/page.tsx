@@ -9,15 +9,21 @@ const TrainingPage = () => {
   return (
     <main className={styles.main}>
       <section className={styles.hero}>
-        <Image
-          src="/images/trainingpage/program.jpg"
-          alt="パーソナルトレーニングの様子"
-          className={styles.heroImage}
-          priority
-          quality={90}
-          fill
-          style={{objectFit: "cover"}}
-        />
+        <div className={styles.heroImageWrapper}>
+          <Image
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/training/hero.jpg`}
+            alt="パーソナルトレーニングの様子"
+            className={styles.heroImage}
+            priority
+            quality={90}
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+          />
+        </div>
 
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>パーソナルトレーニング</h1>
@@ -31,13 +37,15 @@ const TrainingPage = () => {
           <h2 className={commonStyles.sectionTitle}>特徴</h2>
           <div className={commonStyles.cardGrid}>
             <div className={commonStyles.card}>
-              <Image 
-                src="/images/trainingpage/trainer.jpg" 
-                alt="経験豊富なトレーナー" 
-                className={commonStyles.cardImage}
-                width={400}
-                height={300}
-              />
+              <div className={commonStyles.cardImageWrapper}>
+                <Image 
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/training/trainer.jpg`}
+                  alt="経験豊富なトレーナー" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className={commonStyles.cardImage}
+                />
+              </div>
 
               <h3 className={commonStyles.cardTitle}>経験豊富なトレーナー</h3>
               <p className={commonStyles.cardDescription}>
