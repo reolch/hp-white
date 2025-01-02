@@ -1,267 +1,202 @@
 /* ベーススタイル（モバイル） */
 .main {
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.frontContent {
+  padding: 360px;
+  background-color: #fff;
 }
 
 /* ヒーローセクション */
 .hero {
   position: relative;
-  height: 60vh;
-  min-height: 400px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-              url('/training-hero.jpg') center/cover no-repeat;
+  height: 80vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 0 20px;
 }
 
 .heroContent {
-  color: white;
-  max-width: 800px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
 }
 
 .heroTitle {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 .heroSubtitle {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+/* パララックス効果 */
+.parallaxBox {
+  height: 100vh;
+  overflow-y: auto;
+  perspective: 1px;
+}
+
+.parallaxContent {
+  min-height: 400px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contentTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contentText {
+  line-height: 1.8;
+}
+
+.imgbg01 {
+  background-image: url('/images/trainingpage/trainer.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: translateZ(-1px) scale(2);
+}
+
+.imgbg02 {
+  background-image: url('/images/trainingpage/facility.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: translateZ(-0.5px) scale(1.5);
+}
+
+.imgbg03 {
+  background-image: url('/images/trainingpage/program.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: translateZ(0) scale(1);
 }
 
 /* プログラムセクション */
 .programList {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 1rem;
+  margin-top: 2rem;
 }
 
 .programItem {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background-color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .programItem h3 {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #333;
-}
-
-.programItem p {
-  font-size: 0.875rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  color: #666;
 }
 
 .programItem ul {
-  list-style: none;
-  padding: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .programItem li {
-  font-size: 0.875rem;
-  padding: 0.5rem 0;
+  margin: 0.5rem 0;
   padding-left: 1.5rem;
   position: relative;
-  color: #333;
 }
 
 .programItem li::before {
-  content: "✓";
+  content: "•";
   position: absolute;
   left: 0;
-  color: #4CAF50;
+  color: #666;
 }
 
 /* 料金プラン */
 .priceCards {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  padding: 1rem;
+  margin-top: 2rem;
 }
 
 .priceCard {
-  background: white;
-  padding: 2rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.priceCard h3 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #333;
+.priceCard:hover {
+  transform: translateY(-5px);
 }
 
 .price {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  color: #4CAF50;
-  margin-bottom: 1.5rem;
-}
-
-.priceCard ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-}
-
-.priceCard li {
-  font-size: 0.875rem;
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.priceCard li::before {
-  content: "•";
-  position: absolute;
-  left: 0.5rem;
-  color: #4CAF50;
+  color: #333;
+  margin: 1rem 0;
 }
 
 /* CTA セクション */
 .cta {
-  background: #f8f8f8;
+  background-color: #f9f9f9;
   text-align: center;
 }
 
 .ctaDescription {
-  font-size: 1rem;
+  margin: 2rem 0;
   line-height: 1.8;
-  margin-bottom: 2rem;
-  color: #333;
 }
 
 .ctaButton {
-  background: #4CAF50;
-  color: white;
-  border: none;
+  background-color: #333;
+  color: #fff;
   padding: 1rem 2rem;
-  font-size: 1rem;
-  border-radius: 6px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .ctaButton:hover {
-  background: #45a049;
+  background-color: #555;
 }
 
-/* タブレット (768px以上) */
-@media (min-width: 768px) {
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
   .heroTitle {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .heroSubtitle {
-    font-size: 1.25rem;
-  }
-
-  .programList {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-  }
-
-  .priceCards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-  }
-
-  .programItem h3,
-  .priceCard h3 {
-    font-size: 1.5rem;
-  }
-
-  .programItem p,
-  .programItem li,
-  .priceCard li {
     font-size: 1rem;
   }
 
-  .price {
-    font-size: 1.75rem;
-  }
-
-  .ctaDescription {
-    font-size: 1.125rem;
-  }
-
-  .ctaButton {
-    font-size: 1.125rem;
-    padding: 1.25rem 3rem;
-  }
-}
-
-/* デスクトップ (1024px以上) */
-@media (min-width: 1024px) {
-  .hero {
-    height: 70vh;
-  }
-
-  .heroTitle {
-    font-size: 3rem;
-  }
-
-  .heroSubtitle {
-    font-size: 1.5rem;
-  }
-
-  .programList {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-  }
-
+  .programList,
   .priceCards {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-  }
-
-  .programItem,
-  .priceCard {
-    transition: transform 0.3s ease;
-  }
-
-  .programItem:hover,
-  .priceCard:hover {
-    transform: translateY(-5px);
-  }
-}
-
-/* ダークモード対応 */
-@media (prefers-color-scheme: dark) {
-  .programItem,
-  .priceCard {
-    background: #222;
-  }
-
-  .programItem h3,
-  .priceCard h3,
-  .programItem li,
-  .priceCard li {
-    color: #fff;
-  }
-
-  .programItem p {
-    color: #ccc;
-  }
-
-  .cta {
-    background: #1a1a1a;
-  }
-
-  .ctaDescription {
-    color: #fff;
+    grid-template-columns: 1fr;
   }
 } 

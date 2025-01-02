@@ -1,0 +1,65 @@
+.parallax_content{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+  }
+  .content_wrapper {
+    max-width: 800px;
+    width: 90%;
+    padding: 3rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  .section_title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #64ffda, #48d1cc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+  }
+  .section_description {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  .img_bg_01{
+    background-image: url("/images/Este/1.jpg");
+  }
+  .img_bg_02{
+    background-image: url("/images/Este/2.jpg");
+  }
+  .img_bg_03{
+    background-image: url("/images/Este/3.jpg");
+  }
+  .img_bg_04{
+    background-image: url("/images/Este/1.jpg");
+  }
+  .img_bg_05{
+    background-image: url("/images/Este/2.jpg");
+  }
+  @media (max-width: 768px) {
+    .content_wrapper {
+      padding: 2rem;
+      width: 95%;
+    }
+  }

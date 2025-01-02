@@ -8,6 +8,17 @@ import commonStyles from '../../styles/common.module.css';
 const TrainingPage = () => {
   return (
     <main className={styles.main}>
+
+      <div className={styles.parallaxBox}>
+        <div className={`${styles.parallaxContent} ${styles.imgbg01}`}>PARALAX AREA</div>
+        <div className={`${styles.frontContent}`}>FRONT CONTENT</div>
+        <div className={`${styles.parallaxContent} ${styles.imgbg02}`}>PARALAX AREA</div>
+        <div className={`${styles.frontContent}`}>FRONT CONTENT</div>
+        <div className={`${styles.parallaxContent} ${styles.imgbg03}`}>PARALAX AREA</div>
+        <div className={`${styles.frontContent}`}>FRONT CONTENT</div>
+        <div className={`${styles.parallaxContent} ${styles.imgbg01}`}>PARALAX AREA</div>
+      </div>
+      
       <section className={styles.hero}>
         <Image
           src="/images/trainingpage/program.jpg"
@@ -16,7 +27,7 @@ const TrainingPage = () => {
           priority
           quality={90}
           fill
-          style={{objectFit: "cover"}}
+          style={{ objectFit: "cover" }}
         />
 
         <div className={styles.heroContent}>
@@ -32,9 +43,9 @@ const TrainingPage = () => {
           <div className={commonStyles.cardGrid}>
             <div className={commonStyles.card}>
               <div className={commonStyles.cardImageWrapper}>
-                <Image 
+                <Image
                   src="/images/trainingpage/trainer.jpg"
-                  alt="経験豊富なトレーナー" 
+                  alt="経験豊富なトレーナー"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className={commonStyles.cardImage}
@@ -48,9 +59,9 @@ const TrainingPage = () => {
             </div>
 
             <div className={commonStyles.card}>
-              <Image 
-                src="/images/trainingpage/facility.jpg" 
-                alt="充実した設備" 
+              <Image
+                src="/images/trainingpage/facility.jpg"
+                alt="充実した設備"
                 className={commonStyles.cardImage}
                 width={400}
                 height={300}
@@ -63,9 +74,9 @@ const TrainingPage = () => {
             </div>
 
             <div className={commonStyles.card}>
-              <Image 
-                src="/images/trainingpage/program.jpg" 
-                alt="オーダーメイドプログラム" 
+              <Image
+                src="/images/trainingpage/program.jpg"
+                alt="オーダーメイドプログラム"
                 className={commonStyles.cardImage}
                 width={400}
                 height={300}
@@ -147,7 +158,7 @@ const TrainingPage = () => {
                 <li>プログラム作成</li>
               </ul>
             </div>
-            
+
             <div className={styles.priceCard}>
               <h3>集中プラン</h3>
               <p className={styles.price}>¥110,000 / 月</p>
