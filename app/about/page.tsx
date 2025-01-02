@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import styles from './about.module.css';
 
 const AboutPage = () => {
@@ -9,6 +10,14 @@ const AboutPage = () => {
       <div className={styles.parallax_box}>
         {/* ヒーローセクション */}
         <div className={`${styles.parallax_content} ${styles.img_bg_hero}`}>
+          <Image
+            src="/images/hero/slide1.jpg"
+            alt="Hero background"
+            fill
+            priority
+            quality={90}
+            style={{ objectFit: 'cover', zIndex: -1 }}
+          />
           <div className={styles.content_wrapper}>
             <h1 className={styles.section_title}>About Us</h1>
             <p className={styles.section_description}>
@@ -19,6 +28,13 @@ const AboutPage = () => {
 
         {/* ミッションセクション */}
         <div className={`${styles.parallax_content} ${styles.img_bg_mission}`}>
+          <Image
+            src="/images/hero/slide2.jpg"
+            alt="Mission background"
+            fill
+            quality={90}
+            style={{ objectFit: 'cover', zIndex: -1 }}
+          />
           <div className={styles.content_wrapper}>
             <h2 className={styles.section_title}>Our Mission</h2>
             <p className={styles.section_description}>
@@ -30,6 +46,13 @@ const AboutPage = () => {
 
         {/* 特徴セクション */}
         <div className={`${styles.parallax_content} ${styles.img_bg_features}`}>
+          <Image
+            src="/images/hero/slide3.jpg"
+            alt="Features background"
+            fill
+            quality={90}
+            style={{ objectFit: 'cover', zIndex: -1 }}
+          />
           <div className={styles.content_wrapper}>
             <h2 className={styles.section_title}>特徴</h2>
             <div className={styles.features_grid}>
@@ -51,6 +74,13 @@ const AboutPage = () => {
 
         {/* 施設情報セクション */}
         <div className={`${styles.parallax_content} ${styles.img_bg_facility}`}>
+          <Image
+            src="/images/hero/slide1.jpg"
+            alt="Facility background"
+            fill
+            quality={90}
+            style={{ objectFit: 'cover', zIndex: -1 }}
+          />
           <div className={styles.content_wrapper}>
             <h2 className={styles.section_title}>施設情報</h2>
             <div className={styles.facility_info}>
