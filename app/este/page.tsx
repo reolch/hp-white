@@ -11,7 +11,7 @@ const EstePage = () => {
             {/* ヒーローセクション */}
             <section className={styles.hero}>
                 <Image
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/Este/hero.jpg`}
+                    src="/images/Este/hero.jpg"
                     alt="エステの様子"
                     className={styles.heroImage}
                     priority

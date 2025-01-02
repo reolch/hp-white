@@ -9,21 +9,15 @@ const TrainingPage = () => {
   return (
     <main className={styles.main}>
       <section className={styles.hero}>
-        <div className={styles.heroImageWrapper}>
-          <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/training/hero.jpg`}
-            alt="パーソナルトレーニングの様子"
-            className={styles.heroImage}
-            priority
-            quality={90}
-            fill
-            sizes="100vw"
-            style={{
-              objectFit: "cover",
-              objectPosition: "center",
-            }}
-          />
-        </div>
+        <Image
+          src="/images/trainingpage/program.jpg"
+          alt="パーソナルトレーニングの様子"
+          className={styles.heroImage}
+          priority
+          quality={90}
+          fill
+          style={{objectFit: "cover"}}
+        />
 
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>パーソナルトレーニング</h1>
