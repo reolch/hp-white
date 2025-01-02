@@ -309,10 +309,10 @@
   line-height: 1.6;
 }
 
-.img_bg_hero::before { background-image: url("/images/hero/slide1.jpg"); }
-.img_bg_mission::before { background-image: url("/images/hero/slide2.jpg"); }
-.img_bg_features::before { background-image: url("/images/hero/slide3.jpg"); }
-.img_bg_facility::before { background-image: url("/images/hero/slide1.jpg"); }
+.img_bg_hero::before { background-image: url("hp-white/images/hero/slide1.jpg"); }
+.img_bg_mission::before { background-image: url("hp-white/images/hero/slide2.jpg"); }
+.img_bg_features::before { background-image: url("hp-white/images/hero/slide3.jpg"); }
+.img_bg_facility::before { background-image: url("hp-white/images/hero/slide1.jpg"); }
 
 @keyframes fadeUp {
   to {
